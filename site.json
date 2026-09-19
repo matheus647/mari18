@@ -1,0 +1,10 @@
+{
+  "description": "Create a heartfelt and interactive birthday tribute with dynamic parallax effects, a music playlist, a photo carousel, and a customizable 3D book.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
