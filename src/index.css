@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Lora:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+@import 'tailwindcss';
+
+@theme{
+  --font-playfair: 'Playfair Display', Georgia, serif;
+  --font-lora: 'Lora', Georgia, serif;
+  --color-gold: #d4a847;
+  --color-cream: #f5e6d3;
+  --color-muted: #9b7080;
+  --color-wine: #6d1530;
+  --color-rose: #b91c3f;
+}
+
+body {
+  background-color: #070208;
+  color: #f5e6d3;
+  font-family: 'Lora', Georgia, serif;
+  overflow-x: hidden;
+}
+
+* { scrollbar-width: thin; scrollbar-color: #6d1530 #0d0408; }
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #0d0408; }
+::-webkit-scrollbar-thumb { background: #6d1530; border-radius: 3px; }
+
+@keyframes floatUp {
+  0%   { transform: translateY(0) rotate(var(--rot, 0deg)) scale(1); opacity: 0.85; }
+  20%  { transform: translateY(-8vh) rotate(calc(var(--rot, 0deg) + 8deg)) scale(1.08); opacity: 1; }
+  100% { transform: translateY(-110vh) rotate(calc(var(--rot, 0deg) + 52deg)) scale(0.45); opacity: 0; }
+}
+
+.heart-float {
+  animation: floatUp var(--dur, 7s) ease-in-out forwards;
+  animation-delay: var(--delay, 0s);
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  text-shadow: 0 0 18px rgba(212, 168, 71, 0.6);
+  filter: drop-shadow(0 0 10px rgba(185, 28, 63, 0.35));
+}
+
+@keyframes shimmerGold {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+.shimmer-gold {
+  background: linear-gradient(90deg, #d4a847 0%, #f5d98a 40%, #d4a847 60%, #b8892e 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmerGold 4s linear infinite;
+}
+
+@keyframes pageTurn {
+  0%   { box-shadow: -2px 0 12px rgba(0,0,0,0.5); }
+  50%  { box-shadow: -12px 0 40px rgba(0,0,0,0.9); }
+  100% { box-shadow: -2px 0 12px rgba(0,0,0,0.5); }
+}
